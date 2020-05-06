@@ -319,8 +319,7 @@ fn add(self, s: &str) -> String {
 
 まず、`s2`には`&`がついてます。つまり、`add`関数の`s`引数のために最初の文字列に2番目の文字列の参照を追加するということです:
 `String`には`&str`を追加することしかできません。要するに2つの`String`値を追加することはできないのです。
-でも待ってください。`add`の第2引数で指定されているように、`&s2`の型は、`&str`ではなく、
-`&String`ではないですか。では、なぜ、リスト8-18は、コンパイルできるのでしょうか？
+でも待ってください。`&s2`の型は、`add`の第2引数で指定されている`&str`ではなく、`&String`ではないですか。なぜ、リスト8-18は、コンパイルできるのでしょうか？
 
 <!-- The reason we’re able to use `&s2` in the call to `add` is that the compiler -->
 <!-- can *coerce* the `&String` argument into a `&str`. When we call the `add` -->
